@@ -1,0 +1,35 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>com.obiscr.latex</id>
+    <name>Latex Formatter</name>
+    <vendor>OBISCR</vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <resource-bundle>messages.MyBundle</resource-bundle>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+
+    <actions>
+        <group id="LatexFormatterContextActions" text="Latex"
+               icon="/icons/latex-13x.svg"
+               class="com.obiscr.actions.EditorActionGroup"
+               popup="true">
+            <action id="LatexFormatAction" icon="/icons/latex-13x.svg" text="Format to Latex"
+                    class="com.obiscr.actions.LatexFormatAction">
+                <keyboard-shortcut first-keystroke="alt A" keymap="$default" replace-all="true"/>
+                <keyboard-shortcut first-keystroke="alt A" keymap="Mac OS X" replace-all="true"/>
+                <keyboard-shortcut first-keystroke="alt A" keymap="Mac OS X 10.5+" replace-all="true"/>
+            </action>
+            <action id="LineBreakAction" icon="/icons/latex-13x.svg" text="Add Line Break"
+                    class="com.obiscr.actions.LineBreakAction">
+                <keyboard-shortcut first-keystroke="alt S" keymap="$default" replace-all="true"/>
+                <keyboard-shortcut first-keystroke="alt S" keymap="Mac OS X" replace-all="true"/>
+                <keyboard-shortcut first-keystroke="alt S" keymap="Mac OS X 10.5+" replace-all="true"/>
+            </action>
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </group>
+    </actions>
+</idea-plugin>
